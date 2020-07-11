@@ -24,9 +24,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+	position: relative;
+	@extend %ubuntu-light;
+	font-size: 17px;
+	line-height: 26px;
 	min-width: 320px;
 	overflow-x: hidden;
-	position: relative;
 	color: #fff;
 }
 
@@ -37,27 +40,38 @@ body {
 	margin: 0 auto;
 }
 
-.page-section.top {
-	position: relative;
-	min-height: 100vh;
-	background-image: url('../images/bg-top.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-
 .page-section {
-	position: relative;
-	min-height: 100vh;
+	// position: relative;
 	background-image: url('../images/fog-forest.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	padding: 0 0 50px;
+	// padding: 0 0 50px;
+	&::before {
+		position: absolute;
+		content: "";
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(119.35deg, rgba(23, 26, 28, 0.72) 0%, #5E5E57 100%);
+		opacity: 0.15;
+	}
+	&__wrapper {
+		position: relative;
+		min-height: 100vh;
+		padding: 0 0 50px;
+		z-index: 1;
+	}
 }
 
 .title {
-
+	@extend %sf-regular;
+	font-size: 44px;
+	line-height: 53px;
+	padding-left: 25px;
+	// margin-bottom: 55px;
+	padding-top: 100px;
 }
 
 .scroll__btn {
